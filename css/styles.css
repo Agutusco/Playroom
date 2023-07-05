@@ -1,0 +1,277 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.a{
+    text-decoration: none;
+    color: black;
+}
+.a:hover{
+    color: black;
+}
+
+.volver1{
+    /* color: black; */
+    text-decoration: none;
+    color: #b8c6dc;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.volver2{
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.disable{
+    display: none;
+}
+
+.mostrar{
+    display: block;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: row;
+    gap: 50px;
+    justify-content: center;
+}
+.body1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-btn{
+    border-radius: 10px;
+    width: 278px;
+    margin: 5px
+}
+
+.card{
+    width: 320px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 8px solid #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    
+}
+
+.card-body{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    position: absolute;
+    /* background: #000; */
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    color: #fff;
+    padding: 30px;
+    transition: 2s;
+}
+
+.card:hover .card-body{
+    right: 0;
+}
+.card-title{
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+
+.card h3{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: absolute;
+}
+.card-sub-title{
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.card-info{
+    font-size: 16px;
+    line-height: 25px;
+    margin: 40px 0;
+    font-weight: 400;
+}
+
+.card-button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 120px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+/* JUEGO SNAKE */
+.wrapper{
+    width: 65vmin;
+    height: 70vmin;
+    background: #293447;
+    overflow: hidden;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.game-details{
+    color: #b8c6dc;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-board{
+    width: 100%;
+    height: 100%;
+    background: #212837;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.play-board .food{
+    background: #ff003d;
+}
+
+.play-board .head{
+    background: #60cbff;
+}
+
+/* JUEGO MEMORIA */
+.body2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #6563ff;
+}
+
+
+.wrapper1{
+    height: 400px;
+    width: 400px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.tarjetas, .tarjeta, .view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tarjetas{
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tarjetas .tarjeta{
+    cursor: pointer;
+    position: relative;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    width: calc(100% / 4 - 10px);
+    height: calc(100% / 4 - 10px);
+}
+
+.tarjeta.shake{
+    animation: shake 0.35s ease-in-out;
+}
+
+@keyframes shake{
+    0%, 100%{
+        transform: translateX(0);
+    }
+    20%{
+        transform: translateX(-13px);
+    }
+    40%{
+        transform: translateX(13px);
+    }
+    60%{
+        transform: translateX(-8px);
+    }
+    80%{
+        transform: translateX(8px);
+    }
+}
+
+.tarjetas .tarjeta .view{
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;  
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s linear;
+    backface-visibility: hidden;
+}
+
+
+
+.tarjeta .front-view span{
+    font-size: 43px;
+    color: #6563ff;
+}
+
+.tarjeta .back-view{
+    transform: rotateY(-180deg);
+}
+
+
+.tarjeta .back-view img{
+    max-width: 45px;
+}
+
+.tarjeta.flip .front-view{
+    transform: rotateY(180deg);
+}
+
+.tarjeta.flip .back-view{
+    transform: rotateY(0);
+}
+
+
+
+
+
+
+
+
