@@ -30,7 +30,9 @@ let gameOver = false
 let setIntervalId
 let score = 0
 let highScore = localStorage.getItem("high-score") || 0
-highScoreElement.innerHTML = `High Score: ${highScore}`
+if (highScoreElement) {
+    highScoreElement.innerHTML = `High Score: ${highScore}`
+}
 
 
 
@@ -104,8 +106,10 @@ const initGame = () =>{
         }
     }
 
-
+if (playBoard) {
     playBoard.innerHTML = htmlMarkUp
+    
+}
 }
 
 changeFoodPosition()
@@ -114,3 +118,79 @@ setIntervalId = setInterval(initGame, 125)
 document.addEventListener("keydown", changeDirection)
 
 
+
+//Escuchar musica
+const botonRock = document.getElementById("botonRock")
+const botonLatina = document.getElementById("botonLatina")
+const botonElectronica = document.getElementById("botonElectronica")
+const botonHip = document.getElementById("botonHip")
+const rock1 = document.getElementById("rock1")
+const latina1 = document.getElementById("latina1")
+const electronica1 = document.getElementById("electronica1")
+const hip1 = document.getElementById("hiphop1")
+const pausar = document.querySelector(".pausar")
+//tengo que ponerle id a todos los botones de pausa
+
+let posicionReproduccionRock
+let posicionReproduccionLatina
+let posicionReproduccionElectronica
+let posicionReproduccionHip
+
+
+botonRock.addEventListener("click", escuchar)
+botonLatina.addEventListener("click", escuchar)
+botonElectronica.addEventListener("click", escuchar)
+botonHip.addEventListener("click", escuchar)
+pausar.addEventListener("click", pausa)
+
+
+
+
+function pausa() {
+        posicionReproduccionRock = rock1.currentTime
+        rock1.pause()
+        posicionReproduccionLatina = latina1.currentTime
+        latina1.pause()
+        posicionReproduccionElectronica = electronica1.currentTime
+        electronica1.pause()
+        posicionReproduccionHip = hip1.currentTime
+        hip1.pause()
+    }
+
+
+
+function escuchar(event) {
+    if (event.target === botonRock) {
+        rock1.play()
+        latina1.pause()
+        electronica1.pause()
+        hip1.pause()
+        latina1.currentTime = 0
+        hip1.currentTime = 0
+        electronica1.currentTime = 0
+    }else if (event.target === botonLatina){
+        latina1.play()
+        rock1.pause()
+        hip1.pause()
+        electronica1.pause()
+        rock1.currentTime = 0
+        hip1.currentTime = 0
+        electronica1.currentTime = 0
+    }else if(event.target === botonElectronica){
+        electronica1.play()
+        rock1.pause()
+        latina1.pause()
+        hip1.pause()
+        latina1.currentTime = 0
+        hip1.currentTime = 0
+        rock1.currentTime = 0
+    }else if(event.target === botonHip){
+        hip1.play()
+        latina1.pause()
+        rock1.pause()
+        electronica1.pause()
+        latina1.currentTime = 0
+        rock1.currentTime = 0
+        electronica1.currentTime = 0
+    }
+}

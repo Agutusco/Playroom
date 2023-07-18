@@ -268,10 +268,99 @@
     transform: rotateY(0);
 }
 
+/* MUSICA */
+
+.body-music{
+    background-color: #191414;
+}
+
+.body-music a, p, h3, button{
+    font-family: "Arial Rounded", "Roboto", "CircularStd", sans-serif;
+    text-decoration: none;
+}
+.body-music a{
+    color: #FFFFFF;
+}
+
+.body-music button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1DB954;
+    color: #FFFFFF;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+.body-music button:hover{
+    background-color: #1ed760;
+}
+
+.body-music button:active{
+    background-color: #199d4b;
+}
 
 
+.container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 8px;
+        position: fixed;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        width: 1300px;
+        height: 460px;
+        background-color: #81B71A;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(129, 183, 26, 0.7);
+}
 
 
+.music-card{
+    width: 300px;
+    display: flex;
+    padding: 9px;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.btn-music{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 6px;
+}
 
+.music-card h3{
+    text-align: center;
+}
 
+.pausar-boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    position: fixed;
+    transform: translate(-70% -70%);
+    top: 60%;
+    left: 48%;
+}
+
+.volver-button{
+    position: fixed;
+    transform: translate(-40% -40%);
+    top: 20%;
+    left: 10%;
+}
+
+.volver-button h2{
+    padding-bottom: 10px;
+}
