@@ -10,31 +10,57 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body class="body1">
-    <div class="contenedor">
-        <div class="card">
-            <img src="./img/pac.png" class="card-img" alt="">
-            <h3>Jugar</h3>
-            <div class="card-body">
-                <h2 class="card-title"></h2>
-                <p class="card-sub-title"></p>
-                <p class="card-info">Traemos dos nuevos juegos a la plataforma para que puedas pasar el tiempo en Playroom. Poco a poco estamos agregando más videojuegos al sitio web para poder entregar un buen ambiente.</p>
-                <div>
-                    <button class="card-btn" id="btn1">Jugar</button>
-                    <button class="card-btn disable" id="btn2"><a href="./pages/snake.html" class="a">Snake</a></button>
-                    <button class="card-btn disable" id="btn3"><a href="./pages/memory.html" class="a">Memotest</a></button>
-                    <button class="card-btn disable" id="btn4"><a href="./pages/quiz.html" class="a">Adivina la Bandera</a></button>
+    <div id="loginContainer">
+        <div class="form-container">
+            <h1>¡Unite a nuestra comunidad!</h1>
+            <form action="" id="loginForm">
+                <div class="form-bx">
+                    <label for="username">Nombre de usuario:</label>
+                    <input type="text" id="username">
                 </div>
-                
-            </div>
+                <div class="form-bx">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password">
+                </div>
+                <div class="form-bx">
+                    <button type="submit">Iniciar Sesión</button>
+                    <button id="registerBtn">Registrarse</button>
+                </div>
+            </form>
+            <p id="aviso"></p>
         </div>
-        <div class="card">
-            <img src="./img/music.jpg" class="card-img" alt="">
-            <h3>Música</h3>
-            <div class="card-body">
-                <h2 class="card-title"></h2>
-                <p class="card-sub-title"></p>
-                <p class="card-info">Te ofrecemos 4 géneros musicales distintos para escuchar y pasar el rato. Próximamente agregaremos más canciones, continuamos en la fase beta.</p>
-                <button class="card-btn" id="btn4"><a href="./pages/music.html" class="a">Escuchar</a></button>
+    </div>
+    <div class="contenedor" id="contentContainer" style="display: none;">
+        <div class="usuario">
+            <h2><span id="userDisplay"></span>!</h2>
+            <button id="logoutBtn">Cerrar Sesión</button>
+        </div>
+        <div class="main-cards">
+            <div class="card">
+                <img src="./img/pac.png" class="card-img" alt="">
+                <h3>Jugar</h3>
+                <div class="card-body">
+                    <h2 class="card-title"></h2>
+                    <p class="card-sub-title"></p>
+                    <p class="card-info">Ya son tres los videojuegos que playroom ofrece. Disfruta de pasar un tiempo e intentando romper tus propios records. Poco a poco estamos agregando más videojuegos al sitio web para poder entregar un buen ambiente.</p>
+                    <div>
+                        <button class="card-btn" id="btn1">Jugar</button>
+                        <button class="card-btn disable" id="btn2"><a href="./pages/snake.html" class="a">Snake</a></button>
+                        <button class="card-btn disable" id="btn3"><a href="./pages/memory.html" class="a">Memotest</a></button>
+                        <button class="card-btn disable" id="btn4"><a href="./pages/quiz.html" class="a">Adivina la Bandera</a></button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="card">
+                <img src="./img/music.jpg" class="card-img" alt="">
+                <h3>Música</h3>
+                <div class="card-body">
+                    <h2 class="card-title"></h2>
+                    <p class="card-sub-title"></p>
+                    <p class="card-info">Te ofrecemos 4 géneros musicales distintos para escuchar y pasar el rato. Próximamente agregaremos más canciones.</p>
+                    <button class="card-btn" id="btn4"><a href="./pages/music.html" class="a">Escuchar</a></button>
+                </div>
             </div>
         </div>
     </div>

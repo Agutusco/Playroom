@@ -37,11 +37,38 @@
     display: block;
 }
 
-.contenedor{
-    display: flex;
-    justify-content: row;
-    gap: 50px;
+.main-cards{
+    display:flex;
     justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+    gap: 40px;
+}
+
+.usuario{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #000 2px solid;
+}
+
+.usuario h2{
+    margin: 1.5rem;
+}
+
+.usuario button{
+    margin: 1.5rem;
+    padding: .3rem;
+}
+
+.contenedor{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 .body1{
     width: 100%;
@@ -530,4 +557,51 @@ footer{
     height: 50px;
     border-radius: 50%;
     border: 5px solid #fff;
+}
+
+
+/* LOGIN Y REGISTRER*/
+#loginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-bx{
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 1.2em;
+    box-shadow: none;
+    outline: none;
+}
+
+.form-container{
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+    background: white;
+    text-align: center;
+}
+
+.form-container h1{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#aviso{
+    color: red;
 }

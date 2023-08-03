@@ -131,19 +131,21 @@ const latina1 = document.getElementById("latina1")
 const electronica1 = document.getElementById("electronica1")
 const hip1 = document.getElementById("hiphop1")
 const pausar = document.querySelector(".pausar")
-//tengo que ponerle id a todos los botones de pausa
+const contenedorMusica = document.getElementById("contenedorMusica")
 
 let posicionReproduccionRock
 let posicionReproduccionLatina
 let posicionReproduccionElectronica
 let posicionReproduccionHip
 
+if (contenedorMusica) {
+    botonRock.addEventListener("click", escuchar)
+    botonLatina.addEventListener("click", escuchar)
+    botonElectronica.addEventListener("click", escuchar)
+    botonHip.addEventListener("click", escuchar)
+    pausar.addEventListener("click", pausa)
+}
 
-botonRock.addEventListener("click", escuchar)
-botonLatina.addEventListener("click", escuchar)
-botonElectronica.addEventListener("click", escuchar)
-botonHip.addEventListener("click", escuchar)
-pausar.addEventListener("click", pausa)
 
 
 
@@ -196,3 +198,106 @@ function escuchar(event) {
         electronica1.currentTime = 0
     }
 }
+
+
+//LOGIN Y REGISTER
+const loginContainer = document.getElementById("loginContainer")
+const contentContainer = document.getElementById("contentContainer")
+const loginForm = document.getElementById("loginForm")
+const usernameInput = document.getElementById("username")
+const passwordInput = document.getElementById("password")
+const emailInput = document.getElementById("email")
+const registerBtn = document.getElementById("registerBtn")
+const userDisplay = document.getElementById("userDisplay")
+const logoutBtn = document.getElementById("logoutBtn")
+const aviso = document.getElementById("aviso")
+
+
+let currentUser = null
+
+//Inicio de sesión con exito
+function loginExitoso(username) {
+    currentUser = username
+    localStorage.setItem("loggedInUser", username)
+    loginContainer.style.display = "none"
+    contentContainer.style.display = "block"
+    userDisplay.textContent = `¡Bienvenido, ${username}`
+}
+
+function guardarUsuario() {
+    const username = localStorage.getItem("loggedInUser");
+    if (username) {
+        currentUser = username;
+        document.getElementById("userDisplay").textContent = username;
+        loginContainer.style.display = "none";
+        contentContainer.style.display = "block";
+    }
+}
+
+
+function controlLoginORegistro(event) {
+    event.preventDefault()
+    const username = usernameInput.value.trim()
+    const password = passwordInput.value.trim()
+
+    const usersData = JSON.parse(localStorage.getItem("users")) || []
+
+    const user = usersData.find((user) => user.username === username)
+
+    if (user) {
+        if (user.password === password) {
+            loginExitoso(username)
+            aviso.innerHTML = ``
+        }else{
+            aviso.innerHTML = `Contraseña incorrecta`
+        }
+    }else{
+        aviso.innerHTML = `Usuario no registrado`
+    }
+}
+
+
+function controlarRegistro() {
+    
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    const usersData = JSON.parse(localStorage.getItem("users")) || []
+
+    const usuariosExistentes = usersData.find((user) => user.username === username)
+
+    if (username === "" && password === "") {
+        aviso.innerHTML = `Falta completar los campos`
+    }else{
+    if (usuariosExistentes) {
+        aviso.innerHTML = `El usuario ya existe`
+    }else{
+        usersData.push({username, password})
+        localStorage.setItem("users", JSON.stringify(usersData))
+        loginExitoso(username)
+    }
+    }
+    
+}
+
+function logout() {
+    currentUser = null
+    localStorage.removeItem("loggedInUser")
+    loginContainer.style.display = "flex"
+    contentContainer.style.display = "none"
+    usernameInput.value = ""
+    passwordInput.value = ""
+}
+
+loginForm.addEventListener("submit", controlLoginORegistro)
+registerBtn.addEventListener("click", controlarRegistro)
+logoutBtn.addEventListener("click", logout)
+
+document.addEventListener("DOMContentLoaded", () =>{
+    const usuarioGuardado = localStorage.getItem("loggedInUser")
+    if (usuarioGuardado) {
+        loginExitoso(usuarioGuardado)
+    }
+})
+
+guardarUsuario()
