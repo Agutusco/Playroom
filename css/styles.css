@@ -100,8 +100,8 @@
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
-    
 }
+
 
 .card-body{
     width: 100%;
@@ -147,6 +147,10 @@
     line-height: 25px;
     margin: 40px 0;
     font-weight: 400;
+}
+
+.playroom-info{
+    color: #000;
 }
 
 .card-button{
@@ -205,7 +209,6 @@
     min-height: 100vh;
     background: #6563ff;
 }
-
 
 .wrapper1{
     height: 400px;
@@ -604,4 +607,242 @@ footer{
 
 #aviso{
     color: red;
+}
+
+/* About us css */
+
+.contenedor-us{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.form-group{
+    padding: 15px;
+}
+
+.form-us label{
+    display: inline-block;
+}
+
+.form-us h3{
+    padding-left: 10px;
+}
+
+.form-us textarea{
+    display: inline-block;
+}
+
+.mensaje{
+    display: flex;
+    flex-direction: column;
+}
+
+.label-textarea{
+    vertical-align: top;
+}
+
+.enviar-form{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.form-us input{
+    display: flex;
+    align-self: center;
+}
+
+
+
+
+#avisoUs{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+    font-size: 15px;
+    color: red;
+}
+
+#perfectoUs{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+    font-size: 15px;
+    color: green;
+}
+
+.info-us-i p {
+    margin-bottom: 10px;
+}
+
+.info-us-i a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.aside-us{
+    width: 500px;
+    margin: 25px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    height: 100vh;
+}
+
+.aside-us h2{
+    padding-bottom: 60px;
+}
+
+.nosotros-title h2{
+    border-bottom: 1px solid;
+    padding: 0;
+}
+.nosotros-title{
+    padding-bottom: 50px;
+}
+
+.nosotros-title a{
+    color: black;
+    text-decoration: none;
+}
+.nosotros-title a:hover{
+    color: #000;
+}
+
+/* Juego adivina la palabra */
+.body-word{
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #9d14dc;
+}
+
+.contenedor-word{
+    width: 420px;
+    border-radius: 10px;
+    background: #222;
+}
+
+
+.contenedor-word h2{
+    font-size: 28px;
+    font-weight: 600;
+    padding: 20px 25px;
+    border-bottom: 1px solid #333;
+    color: #fff;
+}
+
+.contenedor-word .contenido{
+    margin: 25px 20px 35px;
+}
+
+.contenido .palabra{
+    user-select: none;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 18px;
+    margin-right: -18px;
+    word-break: break-all;
+    text-transform: uppercase;
+    color: #5372f0;
+}
+
+.contenido .detalles{
+    margin: 25px 0 20px;
+}
+
+.detalles p{
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #bbb;
+}
+
+.contenido input{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #111;
+    color: #bbb;
+}
+
+.contenido input:focus{
+    border-color: #5372f0;
+    background-color: #222;
+    color: #fff;
+}
+
+.contenido input::placeholder{
+    color: #555;
+}
+
+.contenido input:focus::placeholder{
+    color: #bbb;
+}
+
+.contenido .botones{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.botones button{
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 14px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    width: calc(50% - 6px);
+    margin: 15px;
+}
+
+.botones button:active{
+    transform: scale(0.97);
+}
+
+.botones .refrescar-palabra{
+    background: #6c757d;
+}
+
+.botones .volver-word{
+    background: #6c757d;
+}
+
+.botones .volver-word:hover{
+    background: #5f666d;
+}
+
+.botones .volver-word a{
+    color: white;
+    text-decoration: none;
+}
+
+.botones .refrescar-palabra:hover{
+    background: #5f666d;
+}
+
+.botones .check-word{
+    background: #5372f0;
+}
+
+.botones .check-word:hover{
+    background: #2c52ed;
 }

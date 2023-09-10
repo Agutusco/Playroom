@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina la palabra</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/styles.css">
+        <!-- BS ICONS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <!-- BS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../img/J (1).ico">
+</head>
+<body class="body-word">
+    <div class="contenedor-word">
+            <h2>Adivina la palabra</h2>
+            <!-- <a href="../index.html">Volver</a> -->
+        <div class="contenido">
+            <p class="palabra"></p>
+            <div class="detalles">
+                <p class="pista">Pista: <span></span></p>
+                <p class="tiempo">Tiempo Restante: <span><b>30</b></span></p>
+                <p class="correcto"></p>
+            </div>
+            <input type="text" spellcheck="false" placeholder="Ingresa una palabra valida">
+            <div class="botones">
+                <button class="refrescar-palabra">Refrescar palabra</button>
+                <button class="check-word">Chequear palabra</button>
+                <button class="volver-word"><a href="../index.html">Volver</a></button>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- BS JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- Mi JS -->
+        <script src="../js/games.js"></script>
+</body>
+</html>

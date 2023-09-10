@@ -3,6 +3,7 @@ const btn1 = document.getElementById("btn1")
 const btn2 = document.getElementById("btn2")
 const btn3 = document.getElementById("btn3")
 const btn4 = document.getElementById("btn4")
+const btn5 = document.getElementById("btn5")
 
 if (btn1) {
     btn1.addEventListener("click", sacarlo)
@@ -13,6 +14,7 @@ function sacarlo() {
     btn2.classList.remove("disable")
     btn3.classList.remove("disable")
     btn4.classList.remove("disable")
+    btn5.classList.remove("disable")
 }
 
 
@@ -289,9 +291,9 @@ function logout() {
     passwordInput.value = ""
 }
 
-loginForm.addEventListener("submit", controlLoginORegistro)
-registerBtn.addEventListener("click", controlarRegistro)
-logoutBtn.addEventListener("click", logout)
+    loginForm.addEventListener("submit", controlLoginORegistro)
+    registerBtn.addEventListener("click", controlarRegistro)
+    logoutBtn.addEventListener("click", logout)
 
 document.addEventListener("DOMContentLoaded", () =>{
     const usuarioGuardado = localStorage.getItem("loggedInUser")
